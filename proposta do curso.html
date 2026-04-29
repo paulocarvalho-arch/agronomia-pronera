@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Pedagógico - Agronomia PRONERA</title>
+    
+    <!-- Fonte Google: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Phosphor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS (Framework de Estilos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configuração de Cores Personalizadas no Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        univasf: {
+                            blue: '#0F2C59',
+                            light: '#1B4282',
+                            accent: '#F9B52A'
+                        },
+                        agro: {
+                            green: '#2e7d32',
+                            light: '#4caf50',
+                            leaf: '#81c784'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-bg-inner {
+            background-image: linear-gradient(rgba(15, 44, 89, 0.9), rgba(46, 125, 50, 0.85)), url('https://images.unsplash.com/photo-1586771107445-d3afaf0e151c?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        /* Estilos para o Acordeão das Ementas */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .5s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- WIDGET VLIBRAS -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <div class="bg-black text-white text-xs py-2 px-4 border-b-4 border-agro-green">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex space-x-6">
+                <a href="#conteudo" class="hover:text-univasf-accent transition-colors outline-none">Ir para Conteúdo [1]</a>
+                <a href="#menu" class="hover:text-univasf-accent transition-colors outline-none">Ir para Menu [2]</a>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <span class="flex items-center text-gray-300">
+                    <i class="ph ph-hands-clapping mr-2 text-lg text-blue-400"></i> Acessível em Libras
+                </span>
+                <a href="#" class="hover:text-univasf-accent transition-colors">Alto Contraste <i class="ph ph-circle-half-tilt ml-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO / NAVBAR -->
+    <header id="menu" class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+              <!-- Logótipo Institucional + Título do Curso -->
+            <div class="flex items-center space-x-3 sm:space-x-5">
+                <!-- Logótipo Completo UNIVASF com tamanho responsivo -->
+                <img src="https://portais.univasf.edu.br/nepst/imagens/marca-univasf-completa-sem-fundo.png" 
+                     alt="Logótipo Completo da UNIVASF" 
+                     class="h-12 sm:h-14 lg:h-16 w-auto object-contain">
+                
+                <!-- Divisor Vertical para dar harmonia visual (oculto em ecrãs muito pequenos) -->
+                <div class="hidden sm:block h-10 border-l-2 border-gray-200"></div>
+
+                <!-- Título -->
+                <div class="flex flex-col justify-center">
+                    <h1 class="text-lg sm:text-xl lg:text-2xl font-extrabold text-univasf-blue leading-tight tracking-tight">UNIVASF</h1>
+                    <p class="text-[10px] sm:text-xs font-bold text-agro-green uppercase tracking-widest mt-0.5">Agronomia - PRONERA</p>
+                </div>
+            </div>
+
+            <!-- Navegação Específica da Proposta -->
+            <nav class="flex flex-wrap justify-center space-x-2 md:space-x-8 text-sm md:text-base font-medium text-gray-600 items-center">
+                <a href="index.html" class="px-3 py-1.5 bg-gray-100 hover:bg-univasf-blue hover:text-white rounded-lg transition-all flex items-center">
+                    <i class="ph ph-arrow-left mr-2"></i> Início
+                </a>
+                <a href="#visao-geral" class="px-2 py-1 hover:text-univasf-blue border-b-2 border-transparent hover:border-univasf-blue transition-all">Visão Geral</a>
+                <a href="#fluxograma" class="px-2 py-1 hover:text-univasf-blue border-b-2 border-transparent hover:border-univasf-blue transition-all">Fluxograma</a>
+                <a href="#ementas" class="px-2 py-1 hover:text-univasf-blue border-b-2 border-transparent hover:border-univasf-blue transition-all">Ementas</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CABEÇALHO INTERNO DA PÁGINA (HERO PEQUENO) -->
+    <section class="hero-bg-inner text-white py-16 relative">
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 id="conteudo" class="text-3xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+                Projeto Pedagógico do Curso <br>
+            </h2>
+            <p class="text-lg text-gray-200 max-w-2xl mx-auto font-light">
+                Conheça a estrutura curricular, os objetivos de formação e o fluxograma de disciplinas delineados para a graduação em Agronomia.
+            </p>
+        </div>
+    </section>
+
+    <!-- VISÃO GERAL E PERFIL DO EGRESSO -->
+    <section id="visao-geral" class="py-16 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                
+                <div class="lg:w-1/2 space-y-6">
+                    <h3 class="text-2xl font-bold text-univasf-blue flex items-center border-b-2 border-agro-green pb-2 inline-flex">
+                        <i class="ph ph-target text-3xl mr-3 text-agro-green"></i> Objetivos do Curso
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        O curso de Graduação em Agronomia, modalidade Bacharelado presencial (PRONERA), tem como objetivo principal formar profissionais com sólida base técnica, científica e humanística. O projeto pedagógico foca numa perspetiva de desenvolvimento rural sustentável, respeitando as especificidades do bioma Caatinga e da região do Semiárido.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Procuramos integrar fortemente o <strong>Ensino, a Pesquisa e a Extensão</strong>, garantindo que o estudante compreenda a realidade social, econômica e ambiental dos agricultores familiares e das comunidades assentadas.
+                    </p>
+                </div>
+
+                <div class="lg:w-1/2 space-y-6">
+                    <h3 class="text-2xl font-bold text-univasf-blue flex items-center border-b-2 border-univasf-accent pb-2 inline-flex">
+                        <i class="ph ph-student text-3xl mr-3 text-univasf-accent"></i> Perfil do Egresso
+                    </h3>
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="ph-fill ph-check-circle text-univasf-blue text-xl mr-3 mt-0.5"></i>
+                                <span class="text-gray-700">Capacidade de atuar na planificação, execução e gestão de sistemas de produção agropecuária.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ph-fill ph-check-circle text-univasf-blue text-xl mr-3 mt-0.5"></i>
+                                <span class="text-gray-700">Visão crítica para promover práticas sustentáveis de maneio dos solos, água e recursos naturais.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ph-fill ph-check-circle text-univasf-blue text-xl mr-3 mt-0.5"></i>
+                                <span class="text-gray-700">Competência para atuar na extensão rural, facilitando o diálogo entre o conhecimento académico e os saberes tradicionais do campo.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FLUXOGRAMA VISUAL / MATRIZ CURRICULAR -->
+    <section id="fluxograma" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-univasf-blue mb-4">Fluxograma do Curso</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A matriz curricular está desenhada para integralização em <strong>3990 horas</strong>, distribuídas tipicamente ao longo de 10 semestres. Abaixo encontra-se uma representação visual do avanço dos módulos de formação.</p>
+            </div>
+
+            <!-- Grade do Fluxograma (Estilizada com Tailwind) -->
+            <div class="relative">
+                <!-- Linha central indicadora (apenas em ecrãs grandes) -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1.5 bg-gray-200 rounded-full"></div>
+
+                <div class="space-y-12">
+                    
+                    <!-- Bloco Semestres Iniciais (Fundamentos) -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="md:w-5/12 flex justify-end">
+                            <div class="bg-white p-6 rounded-2xl shadow-md border-r-4 border-univasf-blue w-full hover:shadow-lg transition-shadow">
+                                <h4 class="font-bold text-lg text-univasf-blue mb-2">Ciclo Básico (1º ao 3º Semestre)</h4>
+                                <p class="text-sm text-gray-600 mb-3">Fundamentos científicos e compreensão do meio rural.</p>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Matemática</span>
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Química Geral</span>
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Biologia e Botânica</span>
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Sociologia Rural</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-univasf-blue rounded-full border-4 border-gray-50 items-center justify-center z-10 text-white font-bold shadow-md group-hover:scale-110 transition-transform">1</div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                    <!-- Bloco Semestres Intermédios (Profissionalizantes) -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="md:w-5/12"></div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-agro-green rounded-full border-4 border-gray-50 items-center justify-center z-10 text-white font-bold shadow-md group-hover:scale-110 transition-transform">2</div>
+                        <div class="md:w-5/12 flex justify-start">
+                            <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-agro-green w-full hover:shadow-lg transition-shadow">
+                                <h4 class="font-bold text-lg text-agro-green mb-2">Ciclo Profissionalizante (4º ao 7º Semestre)</h4>
+                                <p class="text-sm text-gray-600 mb-3">Técnicas agrícolas, maneio de produção e recursos naturais.</p>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Solos e Nutrição</span>
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Fitotecnia</span>
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Zootecnia</span>
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Agroecologia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bloco Semestres Finais (Extensão e Estágio) -->
+                    <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                        <div class="md:w-5/12 flex justify-end">
+                            <div class="bg-white p-6 rounded-2xl shadow-md border-r-4 border-univasf-accent w-full hover:shadow-lg transition-shadow">
+                                <h4 class="font-bold text-lg text-yellow-600 mb-2">Ciclo de Aplicação e TCC (8º ao 10º Semestre)</h4>
+                                <p class="text-sm text-gray-600 mb-3">Prática profissional, pesquisa académica e integração social.</p>
+                                <div class="flex flex-wrap gap-2 text-xs">
+                                    <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100">Extensão Rural</span>
+                                    <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100">Economia e Gestão</span>
+                                    <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100">Estágio Supervisionado</span>
+                                    <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100">TCC</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-univasf-accent rounded-full border-4 border-gray-50 items-center justify-center z-10 text-univasf-blue font-bold shadow-md group-hover:scale-110 transition-transform">3</div>
+                        <div class="md:w-5/12"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMENTAS E DISCIPLINAS (Acordeões) -->
+    <section id="ementas" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-univasf-blue mb-4">Eixos de Formação e Ementas</h2>
+                <p class="text-gray-600">Clique nas categorias abaixo para expandir e ler um resumo descritivo das componentes curriculares baseadas no PPC oficial.</p>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- Acordeão 1 -->
+                <details class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-5 text-univasf-blue bg-white hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center">
+                            <i class="ph ph-books text-2xl mr-3 text-univasf-blue"></i>
+                            Eixo de Formação Básica
+                        </div>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100 text-gray-700 leading-relaxed text-sm">
+                        <p class="mb-3">Fornece o alicerce teórico e metodológico. Este eixo inclui as ciências exatas, da terra e biológicas essenciais para o desenvolvimento agrícola.</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Biologia Celular e Botânica:</strong> Estudo morfológico e fisiológico das plantas cultivadas e da flora nativa.</li>
+                            <li><strong>Química Orgânica e Bioquímica:</strong> Fundamentos das reações químicas aplicadas aos processos biológicos e agrícolas.</li>
+                            <li><strong>Matemática e Estatística Experimental:</strong> Ferramentas analíticas para planeamento e interpretação de dados e pesquisas em campo.</li>
+                            <li><strong>Sociologia e Realidade Rural:</strong> Compreensão do contexto histórico, social e dos movimentos agrários (fundamental no âmbito PRONERA).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Acordeão 2 -->
+                <details class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-5 text-agro-green bg-white hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center">
+                            <i class="ph ph-plant text-2xl mr-3 text-agro-green"></i>
+                            Eixo de Formação Profissional Essencial
+                        </div>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100 text-gray-700 leading-relaxed text-sm">
+                        <p class="mb-3">Constitui o núcleo duro da formação agronómica, focado na produção, engenharia rural e conservação.</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Ciência e Maneio dos Solos:</strong> Pedologia, fertilidade, conservação e recuperação de solos degradados na Caatinga.</li>
+                            <li><strong>Fitotecnia:</strong> Técnicas de cultivo das principais culturas agrícolas, com ênfase nas culturas adaptadas ao semiárido.</li>
+                            <li><strong>Engenharia Rural:</strong> Irrigação e drenagem (cruciais no Vale do São Francisco), topografia e mecanização agrícola.</li>
+                            <li><strong>Sanidade Vegetal:</strong> Entomologia e fitopatologia, focando no controlo biológico e integrado de pragas.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Acordeão 3 -->
+                <details class="group bg-gray-50 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <summary class="flex justify-between items-center font-bold text-lg cursor-pointer p-5 text-univasf-accent bg-white hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center">
+                            <i class="ph ph-users-three text-2xl mr-3 text-univasf-accent"></i>
+                            Eixo de Formação Específica e Extensão
+                        </div>
+                        <span class="transition group-open:rotate-180">
+                            <i class="ph ph-caret-down text-xl"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 bg-gray-50 border-t border-gray-100 text-gray-700 leading-relaxed text-sm">
+                        <p class="mb-3">Focado na aplicação social e gestão, ligando a universidade à comunidade exterior.</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Agroecologia e Sistemas Agroflorestais:</strong> Desenho e maneio de ecossistemas agrícolas sustentáveis e resilientes.</li>
+                            <li><strong>Extensão Rural e Comunicação:</strong> Metodologias participativas para transferência de tecnologia e diálogo de saberes com agricultores familiares.</li>
+                            <li><strong>Gestão e Economia do Agronegócio:</strong> Administração rural, cadeias produtivas e associativismo/cooperativismo.</li>
+                            <li><strong>Estágio Supervisionado e TCC:</strong> Imersão prática em propriedades rurais ou instituições, aliada à produção científica conclusiva.</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="ppc_pronera_camara.pdf" target="_blank" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 font-bold py-3 px-6 rounded-xl transition-colors shadow-sm">
+                    <i class="ph ph-download-simple mr-2 text-xl"></i> Descarregar PPC Completo (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ (Idêntico ao da página inicial) -->
+    <footer class="bg-univasf-blue text-white pt-16 pb-8 border-t-8 border-agro-green mt-auto">
+        <div class="container mx-auto px-4 max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <div class="flex items-center space-x-3 mb-6">
+                    <i class="ph ph-plant text-4xl text-agro-leaf"></i>
+                    <div>
+                        <h3 class="text-xl font-bold">UNIVASF</h3>
+                        <p class="text-xs text-blue-200">Universidade Federal do Vale do São Francisco</p>
+                    </div>
+                </div>
+                <p class="text-sm text-blue-100 leading-relaxed">
+                    O PRONERA visa a democratização do conhecimento e o acesso ao ensino superior para jovens e adultos do campo.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-b border-blue-800 pb-2 text-univasf-accent">Contatos do Curso</h4>
+                <ul class="space-y-4 text-sm text-blue-100">
+                    <li class="flex items-start">
+                        <i class="ph ph-map-pin text-xl text-agro-leaf mr-3 mt-0.5"></i>
+                        <span>Espaço Plural, Rodovia BA-210, Km 4, S/n<br>Juazeiro/BA - CEP: 48902-300</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="ph ph-phone text-xl text-agro-leaf mr-3"></i>
+                        <span>(87) 2101-6700 (Geral UNIVASF)</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="ph ph-envelope-simple text-xl text-agro-leaf mr-3"></i>
+                        <span>agronomia.pronera@univasf.edu.br</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-6 border-b border-blue-800 pb-2 text-univasf-accent">Redes e Institucional</h4>
+                <p class="text-sm text-blue-100 mb-4">Acompanhe a UNIVASF nas redes sociais:</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/agronomiaunivasf.pronera?igsh=MTB6N3kxd2IwY3hzMw==" target="_blank" class="bg-blue-800 p-3 rounded-full hover:bg-univasf-accent hover:text-univasf-blue transition-colors">
+                        <i class="ph ph-instagram-logo text-xl"></i>
+                    </a>
+                    <a href="#" class="bg-blue-800 p-3 rounded-full hover:bg-univasf-accent hover:text-univasf-blue transition-colors">
+                        <i class="ph ph-facebook-logo text-xl"></i>
+                    </a>
+                    <a href="#" class="bg-blue-800 p-3 rounded-full hover:bg-univasf-accent hover:text-univasf-blue transition-colors">
+                        <i class="ph ph-youtube-logo text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 max-w-6xl text-center border-t border-blue-800 pt-8">
+            <p class="text-xs text-blue-300">
+                &copy; <span id="year"></span> Universidade Federal do Vale do São Francisco.<br>
+                Página da Proposta Pedagógica Institucional (PRONERA - Agronomia).
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
