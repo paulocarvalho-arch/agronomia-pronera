@@ -187,7 +187,7 @@
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-extrabold text-univasf-blue mb-4">Fluxograma do Curso</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">A matriz curricular está desenhada para integralização em <strong>3990 horas</strong>, distribuídas tipicamente ao longo de 10 semestres. Abaixo encontra-se uma representação visual do avanço dos módulos de formação.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">A matriz curricular está desenhada para integralização em <strong>3990 horas</strong>, distribuídas tipicamente ao longo de 10 cilcos (semestres). Abaixo encontra-se uma representação visual do avanço dos módulos de formação.</p>
             </div>
 
             <!-- Grade do Fluxograma (Estilizada com Tailwind) -->
@@ -201,13 +201,15 @@
                     <div class="relative flex flex-col md:flex-row items-center justify-between group">
                         <div class="md:w-5/12 flex justify-end">
                             <div class="bg-white p-6 rounded-2xl shadow-md border-r-4 border-univasf-blue w-full hover:shadow-lg transition-shadow">
-                                <h4 class="font-bold text-lg text-univasf-blue mb-2">Ciclo Básico (1º ao 3º Semestre)</h4>
+                                <h4 class="font-bold text-lg text-univasf-blue mb-2">Ciclo Básico (1º ao 3º Ciclo)</h4>
                                 <p class="text-sm text-gray-600 mb-3">Fundamentos científicos e compreensão do meio rural.</p>
                                 <div class="flex flex-wrap gap-2 text-xs">
                                     <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Matemática</span>
                                     <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Química Geral</span>
+                                    <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Física Geral</span>
                                     <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Biologia e Botânica</span>
                                     <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Sociologia Rural</span>
+                                     <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded border border-blue-100">Outras</span>
                                 </div>
                             </div>
                         </div>
@@ -221,13 +223,14 @@
                         <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-agro-green rounded-full border-4 border-gray-50 items-center justify-center z-10 text-white font-bold shadow-md group-hover:scale-110 transition-transform">2</div>
                         <div class="md:w-5/12 flex justify-start">
                             <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-agro-green w-full hover:shadow-lg transition-shadow">
-                                <h4 class="font-bold text-lg text-agro-green mb-2">Ciclo Profissionalizante (4º ao 7º Semestre)</h4>
+                                <h4 class="font-bold text-lg text-agro-green mb-2">Ciclo Profissionalizante (4º ao 7º Ciclo)</h4>
                                 <p class="text-sm text-gray-600 mb-3">Técnicas agrícolas, manejo de produção e recursos naturais.</p>
                                 <div class="flex flex-wrap gap-2 text-xs">
                                     <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Solos e Nutrição</span>
                                     <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Fitotecnia</span>
                                     <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Zootecnia</span>
                                     <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Agroecologia</span>
+                                    <span class="bg-green-50 text-green-700 px-2 py-1 rounded border border-green-100">Outras</span>
                                 </div>
                             </div>
                         </div>
@@ -237,7 +240,7 @@
                     <div class="relative flex flex-col md:flex-row items-center justify-between group">
                         <div class="md:w-5/12 flex justify-end">
                             <div class="bg-white p-6 rounded-2xl shadow-md border-r-4 border-univasf-accent w-full hover:shadow-lg transition-shadow">
-                                <h4 class="font-bold text-lg text-yellow-600 mb-2">Ciclo de Aplicação e TCC (8º ao 10º Semestre)</h4>
+                                <h4 class="font-bold text-lg text-yellow-600 mb-2">Ciclo de Aplicação e TCC (8º ao 10º Ciclo)</h4>
                                 <p class="text-sm text-gray-600 mb-3">Prática profissional, pesquisa acadêmica e integração social.</p>
                                 <div class="flex flex-wrap gap-2 text-xs">
                                     <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded border border-yellow-100">Extensão Rural</span>
@@ -254,6 +257,13 @@
                 </div>
             </div>
         </div>
+        
+        <div class="mt-8 text-center">
+                <a href="fluxograma_do_curso.pdf" target="_blank" class="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 border border-gray-300 text-gray-700 font-bold py-3 px-6 rounded-xl transition-colors shadow-sm">
+                    <i class="ph ph-download-simple mr-2 text-xl"></i> Baixar o Fluxograma Completo (PDF)
+                </a>
+            </div>
+            
     </section>
 
     <!-- EMENTAS E DISCIPLINAS (Acordeões) -->
